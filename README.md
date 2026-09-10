@@ -2,6 +2,7 @@
 Материалы по курсу НИУ ВШЭ "Веб-программирование" 2026 года. Авторы: Аня Мотшкина и Никита Ляпин.
 
 Форма для сдачи домашек и загрузки сертификатов: https://forms.yandex.ru/cloud/6aa32642e010db4578ed4323
+
 Ведомость: https://docs.google.com/spreadsheets/d/1Cq5ylfOZ3tsg07HMQJMyQH7p-BHu4OR39DbfnMppeUE/edit?usp=sharing
 
 Курсы, который надо пройти:
