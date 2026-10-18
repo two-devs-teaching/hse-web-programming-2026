@@ -1,0 +1,12 @@
+{
+    "name": "hw-3-web-api",
+    "version": "1.2.0",
+    "description": "Homework #3. Браузерный API",
+	"scripts": {
+        "start": "parcel ./src/pages/*.html",
+        "build": "parcel build ./src/pages/*.html"
+    },
+    "devDependencies": {
+        "parcel": "^2.16.4"
+    }
+}

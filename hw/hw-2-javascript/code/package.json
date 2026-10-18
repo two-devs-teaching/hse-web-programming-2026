@@ -1,6 +1,6 @@
 {
-    "name": "hw-1-html-css",
-    "version": "1.0.0",
+    "name": "hw-2-javascript",
+    "version": "1.1.0",
     "description": "Homework #2. JavaScript",
 	"scripts": {
         "start": "parcel ./src/pages/*.html",
