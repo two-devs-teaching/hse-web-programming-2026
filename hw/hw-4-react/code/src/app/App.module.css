@@ -1,0 +1,37 @@
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.todoList {
+    position: relative;
+    width: 540px;
+    min-width: 0;
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header > img {
+    width: 32px;
+    height: 32px;
+}
+
+.header > h1 {
+    font-size: 36px;
+    font-weight: var(--typography-weight-bold);
+}
+
+@media (max-width: 720px) {
+    .todoList {
+        margin: 16px;
+        padding-bottom: 120px;
+    }
+}
