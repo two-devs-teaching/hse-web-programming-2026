@@ -17,10 +17,6 @@ export const openApiDocument = {
 
     paths: {
         '/todos': {
-            parameters: [
-                { $ref: '#/components/parameters/Status' }
-            ],
-
             get: {
                 tags: ['Todos'],
                 operationId: 'getTodos',
@@ -94,8 +90,7 @@ export const openApiDocument = {
 
         '/todos/{id}': {
             parameters: [
-                { $ref: '#/components/parameters/TodoId' },
-                { $ref: '#/components/parameters/Status' }
+                { $ref: '#/components/parameters/TodoId' }
             ],
 
             get: {
@@ -172,17 +167,6 @@ export const openApiDocument = {
                 description: 'Идентификатор задачи',
                 schema: { type: 'integer', minimum: 0, maximum: Number.MAX_SAFE_INTEGER },
                 example: 0
-            },
-
-            Status: {
-                name: 'status',
-                in: 'query',
-                description: 'failure возвращает 500 до выполнения операции, без изменения данных. Любое другое значение или отсутствие параметра — обычная обработка.',
-                schema: { type: 'string' },
-                examples: {
-                    success: { summary: 'Обычная обработка', value: 'success' },
-                    failure: { summary: 'Эмуляция ошибки сервера', value: 'failure' }
-                }
             }
         },
 
@@ -277,7 +261,7 @@ export const openApiDocument = {
             },
 
             ServerError: {
-                description: 'Ошибка сервера, в том числе при status=failure',
+                description: 'Ошибка сервера',
                 content: {
                     'application/json': {
                         schema: { $ref: '#/components/schemas/Error' },
