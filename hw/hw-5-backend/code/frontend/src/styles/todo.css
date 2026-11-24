@@ -1,0 +1,124 @@
+.todo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    position: relative;
+    gap: 15px;
+}
+
+.todo__label {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.todo:hover {
+    background-color: #fafafa;
+    transform: translateX(2px);
+}
+
+.todo input[type="checkbox"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 2px solid #d0d0d0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.todo input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.todo input[type="checkbox"]:checked {
+    background-color: #8b8b8b;
+    border-color: #8b8b8b;
+}
+
+.todo input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.todo span {
+    font-size: 18px;
+    color: var(--color-text-primary);
+    user-select: none;
+    overflow-wrap: anywhere;
+}
+
+.todo:has(input[type="checkbox"]:checked) {
+    opacity: 0.8;
+    background-color: transparent;
+    outline: 2px solid #d0d0d0;
+}
+
+.todo__delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #8b8b8b;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.todo__delete:hover {
+    background-color: #f3efee;
+    color: var(--color-text-primary);
+}
+
+.todo__delete:focus-visible {
+    outline: 2px solid var(--color-brand);
+}
+
+.todo input:disabled,
+.todo button:disabled,
+#todo-form button:disabled,
+#todo-retry:disabled {
+    cursor: wait;
+    opacity: 0.5;
+}
+
+.todo-list__error {
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #fce8e6;
+    color: #9c2920;
+}
+
+.todo-list__error p {
+    margin-bottom: 12px;
+}
+
+.todo-list__error button {
+    padding: 8px 12px;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
