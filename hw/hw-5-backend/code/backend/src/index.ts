@@ -3,7 +3,8 @@ import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import type { ErrorRequestHandler } from 'express';
 import { openApiDocument } from './openapi.js';
-import { overrideStatus } from './middleware/status.js';
+import { randomDelay } from './middleware/random-delay.js';
+import { randomFailure } from './middleware/random-failure.js';
 import { todosRouter } from './routes/todos.js';
 
 const app = express();
@@ -20,8 +21,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
     swaggerOptions: { validatorUrl: null }
 }));
 
-// Возвращаем 500 до чтения тела запроса и до любых изменений в файле.
-app.use('/api', overrideStatus);
+// Сначала задерживаем запрос, затем можем вернуть 500 до любых изменений в файле.
+app.use('/api', randomDelay, randomFailure);
 app.use(express.json());
 app.use('/api/todos', todosRouter);
 

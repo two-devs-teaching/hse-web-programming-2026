@@ -1,7 +1,7 @@
 import type { RequestHandler } from 'express';
 
-export const overrideStatus: RequestHandler = (request, response, next) => {
-    if (request.query.status === 'failure') {
+export const randomFailure: RequestHandler = (request, response, next) => {
+    if (Math.random() < 0.25) {
         response.status(500).json({ message: 'Искусственная ошибка сервера' });
 
         return;
